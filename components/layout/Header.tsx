@@ -28,7 +28,7 @@ function Header() {
   const router = useRouter();
 
   return (
-    <header className="z-[100] bg-black/30">
+    <header className="z-[100] bg-black/60">
       <nav className="hidden space-x-5 md:flex">
         {links.map((el) => {
           return (
@@ -37,7 +37,7 @@ function Header() {
               href={el.url}
               className={
                 router.pathname === el.url
-                  ? `text-white`
+                  ? ``
                   : `text-gray-400 duration-200 ease-in hover:text-white`
               }
             >

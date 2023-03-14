@@ -1,10 +1,9 @@
-import React from "react";
 
 function Loading() {
   return (
     <div
       className="flex h-full w-full items-center
-    justify-center text-3xl text-white"
+    justify-center text-3xl "
     >
       Loading...
     </div>

@@ -1,4 +1,5 @@
 import BigPicture from "@/components/home/BigPicture";
+import Row from "@/components/home/Row";
 import { Movie, MovieOrTvShow } from "@/typings";
 import { requests } from "@/utils/requests";
 import axios from "axios";
@@ -25,11 +26,20 @@ export default function Home({
   return (
     <>
       <div
-        className="absolute top-0 left-0 flex h-[90vh] w-full
+        className="flex relative h-[70vh] md:h-[90vh] w-full
         items-end border-2 border-red-500 pb-10
-      pl-4 text-white"
+      pl-4 "
       >
         <BigPicture trendingNow={trendingNow} />
+      </div>
+
+      <div className="mt-10 pl-2 md:pl-5 space-y-10 md:space-y-20">
+        <Row title="Top Rated" movies={topRated} />
+        <Row title="Action Thrillers" movies={actionMovies} />
+        <Row title="Comedies" movies={comedyMovies} />
+        <Row title="Scary Movies" movies={horrorMovies} />
+        <Row title="Romance Movies" movies={romanceMovies} />
+        <Row title="Documentaries" movies={documentaries} />
       </div>
     </>
   );
