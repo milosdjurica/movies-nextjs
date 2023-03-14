@@ -27,10 +27,9 @@ function Header() {
 
   const router = useRouter();
 
-
   return (
-    <header className="bg-black/30">
-      <nav className="space-x-5 hidden md:flex">
+    <header className="z-[100] bg-black/30">
+      <nav className="hidden space-x-5 md:flex">
         {links.map((el) => {
           return (
             <Link
@@ -39,7 +38,7 @@ function Header() {
               className={
                 router.pathname === el.url
                   ? `text-white`
-                  : `text-gray-400 hover:text-white`
+                  : `text-gray-400 duration-200 ease-in hover:text-white`
               }
             >
               {el.title}
@@ -50,7 +49,7 @@ function Header() {
 
       <input
         type="text"
-        className="text-black px-2"
+        className="px-2 text-black"
         placeholder="Search by title or actor"
       />
     </header>

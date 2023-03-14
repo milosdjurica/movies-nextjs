@@ -1,12 +1,10 @@
 import BigPicture from "@/components/home/BigPicture";
-import { Movie } from "@/typings";
-import { IMAGE_BASE_URL } from "@/utils/constants";
+import { Movie, MovieOrTvShow } from "@/typings";
 import { requests } from "@/utils/requests";
 import axios from "axios";
-import Image from "next/image";
 
 type Props = {
-  trendingNow: Movie[];
+  trendingNow: MovieOrTvShow[];
   topRated: Movie[];
   actionMovies: Movie[];
   comedyMovies: Movie[];
@@ -26,7 +24,13 @@ export default function Home({
 }: Props) {
   return (
     <>
-      <BigPicture trendingNow={trendingNow} />
+      <div
+        className="absolute top-0 left-0 flex h-[90vh] w-full
+        items-end border-2 border-red-500 pb-10
+      pl-4 text-white"
+      >
+        <BigPicture trendingNow={trendingNow} />
+      </div>
     </>
   );
 }
