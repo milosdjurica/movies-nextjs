@@ -25,7 +25,7 @@ function Row({ movies, title }: { movies: Movie[]; title: string }) {
 
   return (
     <div className="h-40">
-      <h2 className="text-xl font-semibold md:text-2xl">{title}</h2>
+      <h2 className="pl-2 text-xl font-semibold md:text-2xl">{title}</h2>
 
       <div className="group relative">
         <RiArrowLeftSLine

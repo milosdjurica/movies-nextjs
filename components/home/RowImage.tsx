@@ -12,6 +12,7 @@ function RowImage({ movie }: { movie: Movie }) {
         src={`${IMAGE_BASE_URL}${movie.backdrop_path || movie.poster_path}`}
         alt={movie.title || movie.original_title}
         fill
+        sizes="h-28 min-w-[180px] md:h-36 md:min-w-[260px]"
         className="rounded-sm object-cover md:rounded"
       />
     </div>

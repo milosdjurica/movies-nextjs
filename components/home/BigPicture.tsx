@@ -21,7 +21,6 @@ function BigPicture({ trendingNow }: { trendingNow: MovieOrTvShow[] }) {
 
   return (
     <>
-      {console.log(movie)}
       <Image
         src={`${IMAGE_BASE_URL}${movie.backdrop_path || movie.poster_path}`}
         alt={
