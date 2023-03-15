@@ -4,24 +4,16 @@ import { useRouter } from "next/router";
 function Header() {
   const links = [
     {
+      url: "/mylist",
+      title: "My List",
+    },
+    {
       url: "/",
       title: "Home",
     },
     {
-      url: "/shows",
-      title: "Tv Shows",
-    },
-    {
-      url: "/movies",
-      title: "Movies",
-    },
-    {
-      url: "/new",
-      title: "New & Popular",
-    },
-    {
-      url: "/mylist",
-      title: "My List",
+      url: "/search",
+      title: "Search",
     },
   ];
 
@@ -29,7 +21,7 @@ function Header() {
 
   return (
     <header className="z-[100] bg-black/60">
-      <nav className="hidden space-x-5 md:flex">
+      <nav className="flex w-full justify-center space-x-10 md:space-x-20">
         {links.map((el) => {
           return (
             <Link
@@ -46,12 +38,6 @@ function Header() {
           );
         })}
       </nav>
-
-      <input
-        type="text"
-        className="px-2 text-black"
-        placeholder="Search by title or actor"
-      />
     </header>
   );
 }

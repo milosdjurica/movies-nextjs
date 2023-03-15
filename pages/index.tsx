@@ -26,14 +26,13 @@ export default function Home({
   return (
     <>
       <div
-        className="flex relative h-[70vh] md:h-[90vh] w-full
-        items-end border-2 border-red-500 pb-10
-      pl-4 "
+        className="relative flex h-[70vh] w-full items-end
+        pb-10 pl-4 md:h-[90vh]"
       >
         <BigPicture trendingNow={trendingNow} />
       </div>
 
-      <div className="mt-10 pl-2 md:pl-5 space-y-10 md:space-y-20">
+      <div className="mt-10 space-y-10 pl-2 md:space-y-20 md:pl-5">
         <Row title="Top Rated" movies={topRated} />
         <Row title="Action Thrillers" movies={actionMovies} />
         <Row title="Comedies" movies={comedyMovies} />

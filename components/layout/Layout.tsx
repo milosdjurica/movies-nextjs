@@ -22,9 +22,9 @@ function Layout({ children }: any) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Header />
+      {/* <Header /> */}
 
-      <main className="min-h-screen w-full border-2 border-black">
+      <main className="min-h-screen w-full">
         {children}
       </main>
       <Footer />

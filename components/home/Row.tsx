@@ -1,5 +1,4 @@
 import { Movie } from "@/typings";
-import Link from "next/link";
 import { useRef, useState } from "react";
 import { RiArrowRightSLine, RiArrowLeftSLine } from "react-icons/ri";
 import RowImage from "./RowImage";
@@ -26,13 +25,7 @@ function Row({ movies, title }: { movies: Movie[]; title: string }) {
 
   return (
     <div className="h-40">
-      <Link
-        href="/"
-        className="text-xl font-semibold text-gray-400 
-      transition duration-200 hover:text-white md:text-2xl"
-      >
-        {title}
-      </Link>
+      <h2 className="text-xl font-semibold md:text-2xl">{title}</h2>
 
       <div className="group relative">
         <RiArrowLeftSLine
@@ -44,7 +37,7 @@ function Row({ movies, title }: { movies: Movie[]; title: string }) {
 
         <div
           ref={rowRef}
-          className="flex space-x-1 overflow-x-scroll
+          className="flex space-x-1 overflow-x-scroll p-2
         scrollbar-hide md:space-x-2"
         >
           {movies.map((movie) => (
@@ -54,7 +47,7 @@ function Row({ movies, title }: { movies: Movie[]; title: string }) {
 
         <RiArrowRightSLine
           onClick={() => handleClick("right")}
-          className="absolute top-0 bottom-0 right-1 z-40 m-auto h-10 w-10
+          className="absolute top-0 bottom-0 right-2 z-40 m-auto h-10 w-10
           cursor-pointer opacity-0 duration-200 ease-in
           hover:scale-125 group-hover:opacity-100"
         />
