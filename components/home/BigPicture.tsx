@@ -4,10 +4,13 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import Loading from "../layout/Loading";
 import { BsInfoCircle, BsFillPlayFill } from "react-icons/bs";
+import { useRecoilState } from "recoil";
+import { modalState, movieState } from "@/atoms/modalAtom";
 
 function BigPicture({ trendingNow }: { trendingNow: MovieOrTvShow[] }) {
   const [movie, setMovie] = useState<MovieOrTvShow | null>(null);
-  const [showModal, setShowModal] = useState(false);
+  const [showModal, setShowModal] = useRecoilState(modalState);
+  const [modalMovie, setModalMovie] = useRecoilState(movieState);
 
   useEffect(() => {
     setMovie(trendingNow[Math.floor(Math.random() * trendingNow.length)]);
@@ -16,7 +19,8 @@ function BigPicture({ trendingNow }: { trendingNow: MovieOrTvShow[] }) {
   if (!movie) return <Loading />;
 
   function handleModal() {
-    setShowModal(!showModal);
+    setShowModal(true);
+    setModalMovie(movie);
   }
 
   return (

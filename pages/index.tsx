@@ -1,8 +1,11 @@
+import { modalState } from "@/atoms/modalAtom";
 import BigPicture from "@/components/home/BigPicture";
 import Row from "@/components/home/Row";
+import Modal from "@/components/Modal";
 import { Movie, MovieOrTvShow } from "@/typings";
 import { requests } from "@/utils/requests";
 import axios from "axios";
+import { useRecoilValue } from "recoil";
 
 type Props = {
   trendingNow: MovieOrTvShow[];
@@ -23,6 +26,8 @@ export default function Home({
   romanceMovies,
   documentaries,
 }: Props) {
+  const showModal = useRecoilValue(modalState);
+
   return (
     <>
       <div
@@ -40,6 +45,7 @@ export default function Home({
         <Row title="Romance Movies" movies={romanceMovies} />
         <Row title="Documentaries" movies={documentaries} />
       </div>
+      {showModal && <Modal />}
     </>
   );
 }
