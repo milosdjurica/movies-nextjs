@@ -3,7 +3,7 @@ import { IMAGE_BASE_URL } from "@/utils/constants";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import Loading from "../layout/Loading";
-import { BsInfoCircle } from "react-icons/bs";
+import { BsInfoCircle, BsFillPlayFill } from "react-icons/bs";
 
 function BigPicture({ trendingNow }: { trendingNow: MovieOrTvShow[] }) {
   const [movie, setMovie] = useState<MovieOrTvShow | null>(null);
@@ -50,16 +50,27 @@ function BigPicture({ trendingNow }: { trendingNow: MovieOrTvShow[] }) {
             Release date: {movie.release_date || movie.first_air_date}
           </h6>
         </div>
-        <button
-          onClick={handleModal}
-          className="flex items-center justify-between 
+        <div className="flex space-x-5">
+          <button
+            className="flex items-center justify-center 
+          rounded bg-white px-3 font-semibold text-black
+          duration-200 ease-in hover:scale-105"
+          >
+            <BsFillPlayFill className="text-4xl" />
+            <p>Play</p>
+          </button>
+
+          <button
+            onClick={handleModal}
+            className="flex items-center justify-between 
           space-x-3 rounded bg-gray-400 
           px-4 py-2
           duration-200 ease-in hover:opacity-70"
-        >
-          <BsInfoCircle className="text-xl" />
-          <p>See more</p>
-        </button>
+          >
+            <BsInfoCircle className="text-xl" />
+            <p>See more</p>
+          </button>
+        </div>
       </div>
     </>
   );
