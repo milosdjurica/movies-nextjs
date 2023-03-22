@@ -56,8 +56,9 @@ function BigPicture({ trendingNow }: { trendingNow: MovieOrTvShow[] }) {
         </div>
         <div className="flex space-x-5">
           <button
+            onClick={handleModal}
             className="flex items-center justify-center 
-          rounded bg-white px-3 font-semibold text-black
+          rounded bg-white px-4 font-semibold text-black
           duration-200 ease-in hover:scale-105"
           >
             <BsFillPlayFill className="text-4xl" />
@@ -68,7 +69,7 @@ function BigPicture({ trendingNow }: { trendingNow: MovieOrTvShow[] }) {
             onClick={handleModal}
             className="flex items-center justify-between 
           space-x-3 rounded bg-gray-400 
-          px-4 py-2
+          px-4
           duration-200 ease-in hover:opacity-70"
           >
             <BsInfoCircle className="text-xl" />

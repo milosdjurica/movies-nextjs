@@ -6,7 +6,7 @@ export const modalState = atom<boolean>({
   default: false,
 });
 
-export const movieState = atom<MovieOrTvShow | Movie | null>({
+export const movieState = atom<MovieOrTvShow | null>({
   key: "movieState",
   default: null,
 });
