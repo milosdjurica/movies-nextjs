@@ -21,7 +21,9 @@ function Modal() {
     if (!movie) return;
 
     async function fetchMovie() {
-      // !!append_to_response give a video for a specific movie
+      // !!append_to_response give a videos for a specific movie
+      // !!because in order to get videos we must call api for a single movie
+      // !!cant get videos for every movie at once
       const url = `https://api.themoviedb.org/3/${
         movie?.media_type === "tv" ? "tv" : "movie"
       }/${movie?.id}?api_key=${
@@ -99,8 +101,17 @@ function Modal() {
             </p>
             <p>Released: {movie?.release_date || movie?.first_air_date}</p>
           </div>
-          <p className="text-md w-5/6">{movie?.overview}</p>
-          <p className="font-normal">Genres: {genres.map((el) => el.name).join(", ")}</p>
+          <p className="text-md w-[95%]">
+            {/* //! if overview is longer, then it will be too long for desktop modal */}
+            {movie
+              ? movie.overview.length > 600
+                ? movie?.overview.slice(0, 600) + "....."
+                : movie?.overview
+              : null}
+          </p>
+          <p className="font-normal">
+            Genres: {genres.map((el) => el.name).join(", ")}
+          </p>
         </div>
       </>
     </MuiModal>
