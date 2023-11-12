@@ -108,9 +108,18 @@ Before you can start your own copy of this app on your own machine, you will nee
    ```
 
 4. Enter your API in `.env`
+
    ```js
    NEXT_PUBLIC_API_KEY = "ENTER YOUR API KEY";
    ```
+
+5. Start app in dev mode
+
+```sh
+npm run dev
+#or
+yarn dev
+```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
