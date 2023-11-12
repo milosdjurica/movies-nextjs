@@ -93,7 +93,7 @@ Before you can start your own copy of this app on your own machine, you will nee
 1. Get a free API Key at [https://developer.themoviedb.org/reference/intro/getting-started](https://developer.themoviedb.org/reference/intro/getting-started)
 2. Clone the repo
    ```sh
-   git clone https://github.com/your_username_/Project-Name.git
+   git clone https://github.com/milosdjurica/movies-nextjs.git
    ```
 3. Install NPM packages
 
