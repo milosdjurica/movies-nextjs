@@ -14,8 +14,7 @@
 
   <p align="center">
     This application fetches data about movies and series from TMDB API and stores that information into different genres.
-
-    <br />
+    <br/>
     <a href="https://movies-nextjs-milosdjurica.vercel.app/">View Demo</a>
     ·
     <a href="https://github.com/milosdjurica/movies-nextjs/issues">Report Bug</a>
@@ -119,7 +118,7 @@ Before you can start your own copy of this app on your own machine, you will nee
 
 ## Usage
 
-Now you should be able to start application in your local environment and translate messages with it. Have fun learning!
+Now you should be able to start application in your local environment and see best movies sorted by genres. Have fun!
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
